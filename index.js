@@ -5,6 +5,7 @@ const server=http.createServer(app)
 const {Server}=require('socket.io')
 const io=new Server(server)
 const path=require('path')
+const PORT=process.env.PORT || 5000
 //const engine=require('consolidate')
 /*
 app.set('views',path.join(__dirname,'views'))
@@ -16,7 +17,7 @@ app.set('view engine','html')
 app.use(express.static(__dirname+'/public'))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index.html')
   
 });
 /*
@@ -25,8 +26,8 @@ app.get('/individual', (req, res) => {
 });
 */
 
-server.listen(5000, () => {
-  console.log('Server inciado on port 5000');
+server.listen(PORT, () => {
+  console.log(`Server inciado on port ${PORT} ` );
 });
 
 io.on('connection',(socket)=>{
