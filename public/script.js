@@ -27,5 +27,5 @@ const socket=io()
 
 
 socket.on('server:hola',()=>{
-  console.log('hola estoy con vida')
+  alert('hola estoy con vida')
 })
