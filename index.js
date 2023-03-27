@@ -3,16 +3,12 @@ const app = express();
 const http=require('http')
 const server=http.createServer(app)
 const {Server}=require('socket.io')
-const io=new Server(server)
 const path=require('path')
 const PORT=process.env.PORT || 5000
-//const engine=require('consolidate')
-/*
-app.set('views',path.join(__dirname,'views'))
-app.engine('html',engine.mustache)
-*/
-app.set('view engine','html')
 
+
+
+const io=new Server(server)
 
 app.use(express.static(__dirname+'/public'))
 
