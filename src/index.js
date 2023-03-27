@@ -23,3 +23,4 @@ httpServer.listen(app.get("port"), () => {
 });
 
 
+realTimeServer(httpServer)

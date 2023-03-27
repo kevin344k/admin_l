@@ -12,4 +12,9 @@ router.get("/",(req,res)=>{
     res.sendFile(views+"/loader.html")
   })
 
+
+  router.get("/Irwin_1",(req,res)=>{
+    res.sendFile(views+"/only.html")
+  })
+
  module.exports=router 
