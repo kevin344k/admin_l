@@ -13,12 +13,24 @@
 
             io.emit("admin",data)
         })
+        //RUN
         socket.on("run",(data)=>{
             console.log(data)
 
-            io.emit("runner",data)
+            io.volatile.emit("runner",data)
         })
+        //STOPPED
+        socket.on("stop",(data)=>{
+            console.log(data)
 
+            io.volatile.emit("stopped",data)
+        })
+        //CHANGE
+        socket.on("change",(data)=>{
+            console.log(data)
+
+            io.volatile.emit("changes",data)
+        })
 
 
 

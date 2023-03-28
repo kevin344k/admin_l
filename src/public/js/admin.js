@@ -9,17 +9,17 @@ socket.on("admin",({producto,operador,nombre})=>{
 
    spanOp.innerHTML=operador
    spanProd.innerHTML=producto
-
-
 })
 
-socket.on("runner",()=>{
-    console.log("run");
-
-   
-    irwin1Parpadeo.style.backgroundColor="var(--bs-success)"
-
-
-
-
+socket.on("runner",(data)=>{
+    console.log(data); 
+    irwin1Parpadeo.style.backgroundColor=data
+})
+socket.on("stopped",(data)=>{
+    console.log(data); 
+    irwin1Parpadeo.style.backgroundColor=data
+})
+socket.on("changes",(data)=>{
+    console.log(data); 
+    irwin1Parpadeo.style.backgroundColor=data
 })
