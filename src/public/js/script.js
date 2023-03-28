@@ -51,46 +51,43 @@ btnLoad.addEventListener("click", () => {
 const butRun = document.querySelector("#butRun");
 const stopped = document.querySelector("#stopped");
 const change = document.querySelector("#change");
-
-const setIntervalRun=setInterval(() => {
-  socket.volatile.emit("run", "var(--bs-success)");
-  console.log("run");
-}, 3000);
-const setIntervalStop=setInterval(() => {
-  socket.volatile.emit("stop", "var(--bs-danger)");
-  console.log("stop");
-}, 3000);
-const setIntervalChange=setInterval(() => {
-  socket.volatile.emit("change", "var(--bs-warning)");
-  console.log("change");
-}, 3000);
-
+let setIntervalRun, setIntervalChange, setIntervalStop;
 
 //RUN
 butRun.addEventListener("click", () => {
   butRun.classList.add("butRun");
   stopped.classList.remove("butStop");
   change.classList.remove("butChange");
-  setIntervalRun
 
-  clearInterval(setIntervalStop)
-  clearInterval(setIntervalChange)
+  setIntervalRun = setInterval(() => {
+    socket.volatile.emit("run", "var(--bs-success)");
+    console.log("run");
+  }, 3000);
+
+  clearInterval(setIntervalStop);
+  clearInterval(setIntervalChange);
 });
 //STOPPED
 stopped.addEventListener("click", () => {
   stopped.classList.add("butStop");
   butRun.classList.remove("butRun");
   change.classList.remove("butChange");
-  clearInterval(setIntervalRun,setIntervalChange)
-  setIntervalStop
-
+  setIntervalStop = setInterval(() => {
+    socket.volatile.emit("stop", "var(--bs-danger)");
+    console.log("stop");
+  }, 3000);
+  clearInterval(setIntervalRun);
+  clearInterval(setIntervalChange);
 });
 //CHANGE
 change.addEventListener("click", () => {
   change.classList.add("butChange");
   butRun.classList.remove("butRun");
   stopped.classList.remove("butStop");
-  clearInterval(setIntervalStop,setIntervalRun)
-  setIntervalChange
-
+  setIntervalChange = setInterval(() => {
+    socket.volatile.emit("change", "var(--bs-warning)");
+    console.log("change");
+  }, 3000);
+  clearInterval(setIntervalStop);
+  clearInterval(setIntervalRun);
 });
