@@ -5,8 +5,16 @@
 
 :root{
     --default-bg:gray;
+  --nav-bg:#205E61;
+  --body-bg-deg1:#8360c3;
+   --body-bg-deg2: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+   --body-bg-deg3: linear-gradient(to right, #2ebf91, #8360c3);
 }
-
+body{
+    background:var(--body-bg-deg1) ;  
+    background:var(--body-bg-deg2); 
+    background: var(--body-bg-deg3); 
+    }
 
 
 
@@ -15,87 +23,26 @@
   }
 #section{
     font-family: 'Tajawal', sans-serif;
-    display: flex;
-    height: 80vh;
 
-}
-#text-admin{
-    font-family: 'Manrope', sans-serif;
-    color: white;
-    font-size: 80px;
-
-}
-body{
-    background: #8360c3;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-    nav{
-        background-color: #205E61;  /* fallback for old browsers */
-    }
-
-#butRun{
-    transition: .5s;
+ margin:0 10px;
+ 
 }
 
 
-#irwin1Parpadeo{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(129, 126, 126);
+
+nav{
+        background-color:var(--nav-bg) ;  
+    }
+
+form{
+  padding:20px;
+  background:var(--bs-white);
 }
 
-/*para hacer parpadear*/
-
-#irwin1Parpadeo {
-    font-size:28px;
-    font-family:helvetica;
-    font-weight:bold;
-    background-color:var(--bs-secondary);
-    text-transform:uppercase;
+@media(min-width:640px){
+  #section{
+    width:500px;
+    margin:auto;
   }
-  #irwin1Parpadeo {
-    
-    animation-name: parpadeo;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  
-    -webkit-animation-name:parpadeo;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-  }
-  
-  @-moz-keyframes parpadeo{  
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
-  
-  @-webkit-keyframes parpadeo {  
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-     100% { opacity: 1.0; }
-  }
-  
-  @keyframes parpadeo {  
-    0% { opacity: 1.0; }
-     50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
+}
 
-
-
-
-@media (max-width: 740px) {
-    #text-admin{
-
-        font-size: 40px;
-    
-    }
-    .ico{
-        display: none;
-    }
-          }

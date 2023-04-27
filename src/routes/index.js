@@ -1,20 +1,13 @@
 const express=require("express")
 const router=express.Router()
 const path=require("path")
-
+const overview=[]
 const views=path.join(__dirname,"/../views")
+const adminDb = require("../models/db.js");
 
 router.get("/",(req,res)=>{
-    res.sendFile(views+"/index.html")
+
+  res.sendFile(views+"/index.html")
+  
   })
-
-  router.get("/loader",(req,res)=>{
-    res.sendFile(views+"/loader.html")
-  })
-
-
-  router.get("/Irwin_1",(req,res)=>{
-    res.sendFile(views+"/only.html")
-  })
-
  module.exports=router 
